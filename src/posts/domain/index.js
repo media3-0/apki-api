@@ -1,3 +1,5 @@
+// @flow
+
 const posts = [
   {
     id: 0,
