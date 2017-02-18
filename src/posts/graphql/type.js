@@ -1,10 +1,22 @@
+import User from '../../users/graphql';
+import { author } from '../resolvers';
+
 const Post = `
   type Post {
     id: String!
     title: String!
-    author: String!
+    author: User!
     content: String!
   }
 `;
 
-export default () => [Post];
+const resolvers = {
+  author,
+};
+
+const type = () => [Post, User];
+
+export {
+  type,
+  resolvers,
+};
