@@ -1,4 +1,4 @@
-import User from '../../users/graphql';
+import { type as User } from '../../users/graphql/type';
 import { author } from '../resolvers';
 
 const Post = `

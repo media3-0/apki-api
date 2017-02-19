@@ -1,6 +1,6 @@
 // @flow
 
-import User from './type';
+import { type as User } from './type';
 import { allUsers } from '../resolvers';
 
 const text = `

@@ -1,6 +1,6 @@
 // @flow
 
-// TODO: figure out how to use this type for author to avoid repating
+// TODO: figure out how to use this type for author to avoid repeating
 //import type User from '../users/typedefs';
 
 export type Post = {

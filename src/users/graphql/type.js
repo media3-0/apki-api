@@ -1,3 +1,6 @@
+import { type as Post } from '../../posts/graphql/type';
+import { posts } from '../resolvers';
+
 const User = `
   type User {
     nickname: String!
@@ -5,7 +8,17 @@ const User = `
     uid: String
     password: String
     roles: [String]
+    posts: [Post]
   }
 `;
 
-export default () => [User];
+const resolvers = {
+  posts,
+};
+
+const type = () => [User, Post];
+
+export {
+  type,
+  resolvers,
+};
