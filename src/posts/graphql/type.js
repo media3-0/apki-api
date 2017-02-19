@@ -1,4 +1,4 @@
-import { type as User } from '../../users/graphql/type';
+import * as User from '../../users/graphql';
 import { author } from '../resolvers';
 
 const Post = `
@@ -14,7 +14,7 @@ const resolvers = {
   author,
 };
 
-const type = () => [Post, User];
+const type = () => [Post, User.type];
 
 export {
   type,

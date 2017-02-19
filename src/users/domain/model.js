@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
-const supportRoles = 'admin|moderator|teacher|students';
-const ruleRegex = new RegExp(`/[${supportRoles}]\b/`);
+const supportRoles = ['admin', 'moderator', 'teacher', 'student'];
 
 const userSchema = mongoose.Schema({
   nickname: {
@@ -20,12 +19,12 @@ const userSchema = mongoose.Schema({
     type: [String],
     validate: {
       validator(roles) {
-        const isRulesValid = roles.every(role => ruleRegex.test(role));
-
+        const isRulesValid = roles.every(role => supportRoles.includes(role));
         return isRulesValid;
       },
-      message: `'{VALUE}' is not a valid roles! Supported rules are: ${supportRoles}`,
+      message: `'{VALUE}' is not a valid roles! Supported roles are: ${supportRoles}`,
     },
+    required: true,
   },
   posts: [{
     type: mongoose.Schema.Types.ObjectId,
