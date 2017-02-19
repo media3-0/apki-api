@@ -4,6 +4,7 @@
 // import Post from '../posts/typedefs';
 
 export type User = {
+  id: String,
   nickname: string,
   email: string,
   uid: string,

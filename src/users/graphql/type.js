@@ -3,12 +3,13 @@ import { posts } from '../resolvers';
 
 const User = `
   type User {
+    id: String!
     nickname: String!
     email: String!
     uid: String
     password: String
-    roles: [String]
-    posts: [Post]
+    roles: [String]!
+    posts: [Post]!
   }
 `;
 
