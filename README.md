@@ -21,6 +21,18 @@ npm install
 
 ## Usage
 
+#### Run unit tests
+```bash
+npm test
+```
+
+#### Run unit tests coverage
+```bash
+npm test-cover
+```
+>After executing this command the base table with test coverage will be printed in console, but
+>HTML report version which shows coverage for each tested file can be find in ./coverage/lcov-report/index.html 
+
 #### Start server
 ```bash
 npm start
@@ -45,3 +57,14 @@ where `[database]` is the name of database, eg.
 mongo apki < scripts/mongo.js
 ```
 **ACHTUNG! ACHTUNG!** Existing data will be lost
+
+## Configuration via environment variables
+Name  | Default Value | Description
+------|---------------|-------------
+`APKI_APP_PORT` | 9778 | Port under which application will be available.
+`APKI_MONGODB_DB_NAME` | 'apki' | Mongo database name which will be used to persist all data manipulated by apki-org micro-service.
+`APKI_MONGODB_HOST` | 127.0.0.1 | Mongo server host
+`APKI_MONGODB_PORT` | 27017 | Mongo server port
+`APKI_MONGODB_USER` | '' | Mongo username for authentication, if not specified than no authentication will be used.
+`APKI_MONGODB_PASSWORD` | '' | Mongo password for authentication, if not specified than no authentication will be used.
+`APKI_MONGODB_POOL_SIZE` | 5 | Number of connections in the connection pool for each server instance

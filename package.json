@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
-    "dev": "nodemon"
+    "start": "node -r dotenv/config .",
+    "dev": "nodemon",
+    "test": "jest",
+    "test-cover": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -25,9 +27,11 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "flow-bin": "^0.36.0",
+    "jest": "^18.1.0",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "dotenv": "^4.0.0",
     "graphql": "^0.9.1",
     "graphql-server-koa": "^0.6.0",
     "graphql-tools": "^0.10.0",
@@ -36,6 +40,7 @@
     "koa-bodyparser": "^3.2.0",
     "koa-router": "^7.0.0",
     "mongoose": "^4.8.2",
-    "winston": "^2.3.1"
+    "winston": "^2.3.1",
+    "node-env-configuration": "git+https://github.com/mszostok/node-env-configuration.git"
   }
 }

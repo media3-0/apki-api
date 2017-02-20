@@ -6,7 +6,7 @@
 if [ $? -eq 0 ]; then
   # if flow check passed run node
   echo "----------"
-  node index.js
+  node -r dotenv/config index.js
 else
   # else exit with code 0 (nodemon will still run)
   exit 0
