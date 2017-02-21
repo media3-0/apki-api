@@ -1,8 +1,6 @@
 FROM mhart/alpine-node:7.5.0
 
-# Install git, because we have in our dependencies
-# forked package node-env-configuration which installed from git repo
-RUN apk add --no-cache git
+ARG PORT=9778
 
 RUN mkdir -p /app
 WORKDIR  /app
@@ -12,6 +10,8 @@ RUN npm install --dev
 
 COPY . /app/
 
-EXPOSE 9778
+ENV APKI_APP_PORT ${PORT}
+
+EXPOSE ${PORT}
 
 CMD [ "npm", "start" ]

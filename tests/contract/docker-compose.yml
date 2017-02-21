@@ -1,23 +1,26 @@
-tester:
-  build: .
-  command: "sh test.sh ${TEST_ARGS}"
-  volumes:
-    - ./__snapshots__/:/contract/__snapshots__/
-  links:
-    - api
+version: '2'
+services:
 
-api:
-  build: ../..
-  environment: 
-    - APKI_MONGODB_HOST="mongo"
-  links:
-    - mongo
+  tester:
+    build: .
+    command: "sh test.sh ${TEST_ARGS}"
+    volumes:
+      - ./__snapshots__/:/contract/__snapshots__/
+    links:
+      - api
 
-mongo-seed:
-  build: ../images/mongo-seed
-  links:
-    - mongo
+  api:
+    build: ../..
+    environment: 
+      - APKI_MONGODB_HOST="mongo"
+      - APKI_APP_PORT=9778
+    links:
+      - mongo
 
-mongo:
-  image: mongo:3.4.2
-  
+  mongo-seed:
+    build: ../images/mongo-seed
+    links:
+      - mongo
+
+  mongo:
+    image: mongo:3.4.2

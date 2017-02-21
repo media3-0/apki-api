@@ -48,7 +48,7 @@ npm run test:unit
 
 #### Run unit tests coverage
 ```bash
-npm run test-cover
+npm run test:cover
 ```
 >After executing this command the base table with test coverage will be printed in console, but
 >HTML report version which shows coverage for each tested file can be find in ./coverage/lcov-report/index.html 
