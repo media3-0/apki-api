@@ -10,8 +10,6 @@
   "rules": {
     "no-param-reassign": "off",
     "import/prefer-default-export": "off",
-    "no-unused-expressions": "off",
-    "no-prototype-builtins": "off",
-    "padded-blocks": "off"
+    "no-prototype-builtins": "off"
   }
 }
