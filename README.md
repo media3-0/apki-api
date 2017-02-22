@@ -21,18 +21,6 @@ npm install
 
 ## Usage
 
-#### Run unit tests
-```bash
-npm test
-```
-
-#### Run unit tests coverage
-```bash
-npm test-cover
-```
->After executing this command the base table with test coverage will be printed in console, but
->HTML report version which shows coverage for each tested file can be find in ./coverage/lcov-report/index.html 
-
 #### Start server
 ```bash
 npm start
@@ -45,6 +33,37 @@ npm run dev
 
 #### API endpoint: [localhost:9778/graphql](http://localhost:9778/graphql)
 #### API Console GraphiQL: [localhost:9778/graphiql](http://localhost:9778/graphiql)
+
+### Tests
+
+#### Run all tests
+```bash
+npm test
+```
+
+#### Run unit tests
+```bash
+npm run test:unit
+```
+
+#### Run unit tests coverage
+```bash
+npm run test:cover
+```
+>After executing this command the base table with test coverage will be printed in console, but
+>HTML report version which shows coverage for each tested file can be find in ./coverage/lcov-report/index.html 
+
+#### Contract tests
+
+Run contract tests:
+```bash
+npm run test:contract
+```
+
+Update contract tests:
+```bash
+npm run test:contract:update
+```
 
 ## Development
 

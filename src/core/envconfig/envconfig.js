@@ -1,6 +1,6 @@
 // @flow
 
-import envConfiguration from 'node-env-configuration';
+import envConfiguration from 'envconfig-alpha';
 import type { Options } from './typedefs';
 
 /**
