@@ -1,6 +1,6 @@
 // @flow
 
-import { type as Post } from './type';
+import Post from './type';
 
 import { allPosts } from '../resolvers';
 
