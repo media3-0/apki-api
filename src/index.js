@@ -35,13 +35,23 @@ const router = new Router();
     },
     graphiql: {
       endpointURL: '/graphql',
-      query: (
-        `query allPosts($limit: Int) {
-          allPosts(limit: $limit) {
-            id
-            author
-          }
-        }`
+      query: (`
+  query testing($limit: Int) {
+    allPosts(limit: $limit) {
+      id
+      author {
+        id
+        nickname
+     }
+    }
+    allUsers(limit: $limit) {
+      id
+      posts {
+        id
+        title
+     }
+    }
+  }`
       ),
       variables: {
         limit: 2,
