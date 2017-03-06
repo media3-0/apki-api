@@ -8,8 +8,8 @@
     "dev": "nodemon",
     "test": "npm run test:unit && npm run test:contract",
     "test:unit": "jest",
-    "test:contract": "cd tests/contract && ./run.sh & cd ../..",
-    "test:contract:update": "cd tests/contract && ./run.sh -u & cd ../..",
+    "test:contract": "cd tests/contract && ./run.sh",
+    "test:contract:update": "cd tests/contract && ./run.sh -u",
     "test:cover": "jest --coverage"
   },
   "keywords": [],
