@@ -2,12 +2,26 @@ exports[`Queries allPosts with limit 1`] = `
 Object {
   "allPosts": Array [
     Object {
-      "author": "Mietek",
+      "author": Object {
+        "email": "edziu@email",
+        "id": "aaaaaaaaaaaaaaaaaaaaaaa1",
+        "nickname": "Edziu",
+        "roles": Array [
+          "student",
+        ],
+      },
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla quis ipsum ut hendrerit. Etiam rutrum elementum urna, et fringilla lacus dapibus sed.",
       "title": "Lorem ipsum",
     },
     Object {
-      "author": "Andrzej",
+      "author": Object {
+        "email": "janusz@email",
+        "id": "aaaaaaaaaaaaaaaaaaaaaaa2",
+        "nickname": "Janusz",
+        "roles": Array [
+          "teacher",
+        ],
+      },
       "content": "Aliquam eu mollis felis. Maecenas quis pulvinar neque. Donec arcu ex, ultrices sit amet nunc ac, interdum dapibus nunc.",
       "title": "Maecenas mattis",
     },
@@ -19,24 +33,66 @@ exports[`Queries allPosts without params 1`] = `
 Object {
   "allPosts": Array [
     Object {
-      "author": "Mietek",
+      "author": Object {
+        "email": "edziu@email",
+        "id": "aaaaaaaaaaaaaaaaaaaaaaa1",
+        "nickname": "Edziu",
+        "roles": Array [
+          "student",
+        ],
+      },
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla quis ipsum ut hendrerit. Etiam rutrum elementum urna, et fringilla lacus dapibus sed.",
       "title": "Lorem ipsum",
     },
     Object {
-      "author": "Andrzej",
+      "author": Object {
+        "email": "janusz@email",
+        "id": "aaaaaaaaaaaaaaaaaaaaaaa2",
+        "nickname": "Janusz",
+        "roles": Array [
+          "teacher",
+        ],
+      },
       "content": "Aliquam eu mollis felis. Maecenas quis pulvinar neque. Donec arcu ex, ultrices sit amet nunc ac, interdum dapibus nunc.",
       "title": "Maecenas mattis",
     },
     Object {
-      "author": "Zdzisiek",
+      "author": Object {
+        "email": "andrzej@email",
+        "id": "aaaaaaaaaaaaaaaaaaaaaaa3",
+        "nickname": "Andrzej",
+        "roles": Array [
+          "moderator",
+        ],
+      },
       "content": "Suspendisse eget tempor sem, eu lobortis tortor. Donec quis sem sapien. Pellentesque nec massa elit. Curabitur sagittis nibh diam, ut volutpat tortor rutrum vel.",
       "title": "Praesent laoreet dui at dui",
     },
     Object {
-      "author": "Andrzej",
+      "author": Object {
+        "email": "zdzisiek@email",
+        "id": "aaaaaaaaaaaaaaaaaaaaaaa4",
+        "nickname": "Zdzisiek",
+        "roles": Array [
+          "admin",
+          "teacher",
+        ],
+      },
       "content": "In vitae congue quam. Aenean vel porttitor neque. Etiam non neque vel elit luctus euismod eget non dui. In venenatis arcu dictum elit tristique dictum. Fusce vel mauris vel lorem facilisis egestas. Sed nec interdum orci.",
       "title": "Proin suscipit non quam",
+    },
+    Object {
+      "author": Object {
+        "email": "zdzisiek@email",
+        "id": "aaaaaaaaaaaaaaaaaaaaaaa4",
+        "nickname": "Zdzisiek",
+        "roles": Array [
+          "admin",
+          "teacher",
+        ],
+      },
+      "content": "In vel porttitor neque. Etiam non neque vel elit luctus euismod eget non dui. In venenatis arcu dictum elit tristique dictum. Fusce vel mauris vel lorem facilisis egestas. Sed nec interdum orci.",
+      "title": "Sipm suscipit non quam",
     },
   ],
 }

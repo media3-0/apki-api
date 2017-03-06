@@ -13,7 +13,7 @@ cleanup () {
 trap 'cleanup ; printf "${RED}Tests Failed For Unexpected Reasons${NC}\n"' HUP INT QUIT PIPE TERM
 
 if [ "$1" == "-u" ] ; then
-  # Snapshots should be update, 
+  # Snapshots should be update,
   # set environment variable TEST_ARGS with value `-u`,
   # will be passed as a argument to `test.sh`
   export TEST_ARGS="-u"

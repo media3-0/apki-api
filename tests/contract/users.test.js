@@ -8,36 +8,34 @@ const client = new Lokka({
 });
 
 describe('Queries', () => {
-
-  describe('allPosts', () => {
-
+  describe('allUsers', () => {
     // given
     const queries = {
       'without params': `
         {
-          allPosts {
-            title
-            author {
+          allUsers {
               id
               nickname
               email
               roles
-            }
-            content
+              posts {
+                title
+                content
+              }
           }
         }
       `,
       'with limit': `
         {
-          allPosts(limit: 2) {
-            title
-            author {
+          allUsers(limit: 2) {
               id
               nickname
               email
               roles
-            }
-            content
+              posts {
+                title
+                content
+              }
           }
         }
       `,
@@ -53,5 +51,4 @@ describe('Queries', () => {
     });
 
   });
-
 });
