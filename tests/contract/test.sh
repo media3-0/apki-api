@@ -1,8 +1,12 @@
 #!/bin/bash
 
+echo "START CONTRACT TESTS"
+
 count=10
 while [[ $count -ne 0 ]] ; do
+  echo ${count}
   response=$(curl --write-out %{http_code} --silent --output /dev/null http://api:9778/graphql)
+  echo ${response}
   if [[ $response -eq 200 ]] ; then
     count=1
   else
