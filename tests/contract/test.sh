@@ -1,18 +1,18 @@
 #!/bin/bash
 
-count=10                              # Maximum number to try.
+count=10
 while [[ $count -ne 0 ]] ; do
-  ping -c 1 api                          # Try once.
-  rc=$?
-  if [[ $rc -eq 0 ]] ; then
-    count=1                      # If okay, flag to exit loop.
+  response=$(curl --write-out %{http_code} --silent --output /dev/null http://api:9778/graphql)
+  if [[ $response -eq 200 ]] ; then
+    count=1
   else
-    sleep 5
+    echo "."
+    sleep 3
   fi
-  count=count-1                  # So we don't go forever.
+  ((count--))
 done
 
-if [[ $rc -eq 0 ]] ; then                  # Make final determination.
+if [[ $response -eq 200 ]] ; then       # Make final determination.
 
   if [ "$1" == "-u" ]; then
     # update snapshots
@@ -24,5 +24,5 @@ if [[ $rc -eq 0 ]] ; then                  # Make final determination.
   fi
 
 else
-    echo "Tests failed."
+    echo "Cannot connect with server."
 fi
