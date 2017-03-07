@@ -46,11 +46,7 @@ describe('Queries', () => {
     Object.entries(queries).map(async ([name, query]) => {
       it(name, async () => {
         // when
-        try {
         const result = await client.query(query);
-        } catch(err){
-          console.log('ERROR', err);
-        }
         // then
         expect(result).toMatchSnapshot();
       });
