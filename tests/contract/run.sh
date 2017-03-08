@@ -18,7 +18,7 @@ if [ "$1" == "-u" ] ; then
   # will be passed as a argument to `test.sh`
   export TEST_ARGS="-u"
 fi
-docker-compose -p $CONTAINERS_PREFIX build && docker-compose -p $CONTAINERS_PREFIX up -d
+docker-compose -p $CONTAINERS_PREFIX build && docker-compose -p $CONTAINERS_PREFIX up
 
 if [ $? -ne 0 ] ; then
   printf "${RED}Docker Compose Failed${NC}\n"
