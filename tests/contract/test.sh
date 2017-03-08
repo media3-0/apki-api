@@ -2,22 +2,6 @@
 
 echo "START CONTRACT TESTS"
 
-count=10
-while [[ $count -ne 0 ]] ; do
-  echo ${count}
-  response=$(curl --write-out %{http_code} --silent --output /dev/null http://api:9778/graphql)
-  echo ${response}
-  if [[ $response -eq 200 ]] ; then
-    count=1
-  else
-    echo "."
-    sleep 3
-  fi
-  ((count--))
-done
-
-if [[ $response -eq 200 ]] ; then       # Make final determination.
-
   if [ "$1" == "-u" ]; then
     # update snapshots
     echo "UPDATE"
@@ -27,6 +11,3 @@ if [[ $response -eq 200 ]] ; then       # Make final determination.
     node --harmony-async-await node_modules/.bin/jest
   fi
 
-else
-    echo "Cannot connect with server."
-fi
