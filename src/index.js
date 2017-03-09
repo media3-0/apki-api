@@ -62,7 +62,8 @@ const router = new Router();
   router
     .post('/graphql', graphqlKoa(options.graphql))
     .get('/graphql', graphqlKoa(options.graphql))
-    .get('/graphiql', graphiqlKoa(options.graphiql));
+    .get('/graphiql', graphiqlKoa(options.graphiql))
+    .get('/status', (ctx) => { ctx.status = 200; });
 
   app
     .use(cors())
