@@ -1,5 +1,11 @@
 const http = require('http');
 
+const ENDPOINT = {
+  hostname: 'api',
+  port: 9778,
+  path: '/status',
+};
+
 function request({ hostname, port, path, method = 'GET' }) {
   return new Promise((resolve) => {
     const req = http.request(
@@ -12,12 +18,7 @@ function request({ hostname, port, path, method = 'GET' }) {
 }
 
 async function isServerUp() {
-  const params = {
-    hostname: 'api',
-    port: 9778,
-    path: '/status',
-  };
-  const [err, res] = await request(params);
+  const [err, res] = await request(ENDPOINT);
   if (err) return false;
   return res.statusCode === 200;
 }
