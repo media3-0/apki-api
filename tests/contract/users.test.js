@@ -1,5 +1,6 @@
 const Lokka = require('lokka').Lokka;
 const Transport = require('lokka-transport-http').Transport;
+const checkServer = require('./helpers/checkServer');
 
 const API_URI = 'http://api:9778/graphql';
 
@@ -8,6 +9,9 @@ const client = new Lokka({
 });
 
 describe('Queries', () => {
+  it('server should be up', async () => {
+    expect(await checkServer()).toBe(true);
+  })
   describe('allUsers', () => {
     // given
     const queries = {
